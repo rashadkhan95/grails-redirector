@@ -1,7 +1,7 @@
 package redirector
 
 import grails.validation.ValidationException
-import static org.springframework.http.HttpStatus.*
+//import static org.springframework.http.HttpStatus.*
 
 class PersonController {
 
@@ -12,8 +12,29 @@ class PersonController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond personService.list(params), model:[personCount: personService.count()]
+        
+    }
+    
+    def showPersons(){
+        def persons = Person.list()
+        [persons:persons]
+    }
+    
+    def email() {
+        def john = Person.findByKey(123)
+        [john:john]
+        
+        //render(view: "/views/index", model: john)
+        //return [personView: john]
+    }
+    
+    def list() {
+        [persons: Person.list(params)]
     }
 
+    def goToForm(){
+        redirect(url: "http://localhost:8080/opt/in?firstName=John&lastName=Doe&email=john.doe@johndoe.me&optin=1")
+    }
     def show(Long id) {
         respond personService.get(id)
     }

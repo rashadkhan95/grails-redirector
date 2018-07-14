@@ -9,8 +9,10 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        //"/"(view:"/index")
+        "/"(view:"/person/email")
         "500"(view:'/error')
         "404"(view:'/notFound')
+        "/opt/in"(view:'/opt/in')
     }
 }
