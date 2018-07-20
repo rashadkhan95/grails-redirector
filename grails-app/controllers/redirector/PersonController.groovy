@@ -33,8 +33,23 @@ class PersonController {
     }
 
     def goToForm(){
-        redirect(url: "http://localhost:8080/opt/in?firstName=John&lastName=Doe&email=john.doe@johndoe.me&optin=1")
-    }
+        def john = Person.findByKey(123)
+        [john:john]
+        redirect(url: "http://localhost:8080/opt/in?firstName=${john.firstName}&lastName=${john.lastName}&email=${john.email}&optin=${john.optin}")}
+    
+    def goToJane(){
+        def jane = Person.findByKey(124)
+        [jane:jane]
+        redirect(url: "http://localhost:8080/opt/in?firstName=${jane.firstName}&lastName=${jane.lastName}&email=${jane.email}&optin=${jane.optin}")}
+    
+    def goToRich(){
+        def rich = Person.findByKey(125)
+        [rich:rich]
+        redirect(url: "http://localhost:8080/opt/in?firstName=${rich.firstName}&lastName=${rich.lastName}&email=${rich.email}&optin=${rich.optin}")}
+    
+    
+    
+
     def show(Long id) {
         respond personService.get(id)
     }

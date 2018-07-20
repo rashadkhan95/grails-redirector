@@ -13,10 +13,11 @@
     </head>
     <body>
         
-        <p>Hello John, </p>
+        <p>Hello Richard, </p>
         <p>Click on the link below to go to the form.</p>
         
-        <p>John Doe: <g:link controller="person" action="goToForm">http://localhost:8090/process/optin?key=123</g:link></p>
+        
+        <p>Richard Roe: <g:link controller="person" action="goToRich">http://localhost:8080/process/optin?key=125</g:link></p>
         
         
     </body>

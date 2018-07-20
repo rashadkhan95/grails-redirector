@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main"/>
-		<title>Persons</title>
+		
+		<title>Marketing Tool Form</title>
 	</head>
 	<body>
-        <!--<g:each in="${persons}" var="person" status="i">
-            <h3>${i+1}. ${person.key}: ${person.lastName}, ${person.firstName}</h3>
-
-            <br/>
-        </g:each>-->
         
         <form>
             <p><label for="firstName">First Name:</label><g:textField name="firstName" id="firstName" value="" /></p>
             <p><label for="lastName">Last Name: </label><g:textField name="lastName" id="lastName" value="" /></p>
-            <p><label for="email">Email:</label><g:textField name="email" id="email" value="" /></p>
+            <p><label for="email">Email: </label><g:textField name="email" id="email" value="" /></p>
             <p><label for="optin">Opt In:</label>
             <g:radio name="optin" id="yes" value="yes"/><label>Yes</label>
             <g:radio name="optin" id="no" value="no"/><label>No</label></p>
+        
             <g:submitButton name="submit" value="Submit" />
             <g:submitButton name="cancel" value="Cancel" />
         </form>
@@ -37,7 +33,7 @@
             if (optin == "1") {
               document.getElementById("yes").checked = true;
             }
-            else if (optin == "2") {
+            else if (optin == "0") {
               document.getElementById("no").checked = true;
             }
           }
